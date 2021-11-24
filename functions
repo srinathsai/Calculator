@@ -1,0 +1,62 @@
+import java.util.Scanner;
+class Main {
+    static int calculator(int a, int b, char operation){
+        if(operation=='+'){
+            add(a,b);
+        }
+        else if(operation=='-'){
+            subtract(a,b);
+        }
+        else if(operation=='/'){
+            divide(a,b);
+        }
+        else if(operation=='*'){
+            multiply(a,b);
+        }
+        else if(operation=='^'){
+            exponential(a,b);
+        }
+      return -1;  
+    }
+    static int add(int a, int b){
+        return a+b;
+    }
+    static int subtract(int a, int b){
+        if(a>b){
+            return a-b;
+        }
+        else{
+            return b-a;
+        }
+    }
+    static int divide(int a, int b){
+        return a/b;
+    }
+    static int multiply(int a,int b){
+        return a*b;
+    }
+    static int exponential(int a, int b){
+        return (int) Math.pow(a,b);
+    }
+   public static void main(String[] args) {
+        Scanner obj=new Scanner(System.in);
+        System.out.println("Enter operand1");
+        String a = obj.nextLine();
+        int a1= Integer.valueOf(a);
+        
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter operand2");
+        String b=input.nextLine();
+        int b1=Integer.valueOf(b);
+        
+        Scanner caches =new Scanner(System.in);
+        String operation=caches.nextLine();
+        char c= operation.charAt(0);
+        System.out.println(calculator(a1,b1,c));
+        
+        
+    
+        
+        
+    }
+}
